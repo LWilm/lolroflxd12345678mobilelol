@@ -17,9 +17,9 @@
     <ListView
         android:id="@+id/listview"
         android:layout_width="368dp"
-        android:layout_height="438dp"
+        android:layout_height="317dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="184dp"
+        android:layout_marginTop="204dp"
         android:gravity="center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -48,7 +48,7 @@
         android:layout_height="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="44dp"
-        android:text="Kann auch im Restmüll entsorgt werden"
+        android:text="Holz kann auch im Restmüll entsorgt werden"
         android:visibility="gone"
         app:layout_constraintStart_toEndOf="@+id/button4"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
@@ -63,6 +63,7 @@
         android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
 
 </android.support.constraint.ConstraintLayout>
 <!--</android.support.v4.widget.DrawerLayout>-->

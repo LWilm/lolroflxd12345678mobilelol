@@ -42,6 +42,9 @@ public class SuchergebnisActivity extends AppCompatActivity {
 
 //        toolbarSuchergebnis = findViewById(R.id.toolbarSettings);
 //        setSupportActionBar(toolbarSuchergebnis);
+//        getActionBar().show();
+//        getSupportActionBar().setTitle("Your Activity Title"); // for set actionbar title
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 //
 //        actionbarSuchergebnis = getSupportActionBar();
 //        actionbarSuchergebnis.setDisplayHomeAsUpEnabled(true);
@@ -100,7 +103,7 @@ public class SuchergebnisActivity extends AppCompatActivity {
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-
+                System.out.println("hallo");
                 switch (i){
                     case 0:
                         suchergebnis = 0;
@@ -126,21 +129,21 @@ public class SuchergebnisActivity extends AppCompatActivity {
         });
     }
 
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        System.out.println(item.getItemId());
-//        switch (item.getItemId()) {
-//            case 16908332:
-//                Intent intent6 = new Intent(this, KameraActivity.class);
-//                startActivity(intent6);
-//                return true;
-//
-//            default:
-//                // If we got here, the user's action was not recognized.
-//                // Invoke the superclass to handle it.
-//                return super.onOptionsItemSelected(item);
-//
-//        }
-//    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        System.out.println(item.getItemId());
+        switch (item.getItemId()) {
+            case 16908332:
+                Intent intent6 = new Intent(this, KameraActivity.class);
+                startActivity(intent6);
+                return true;
+
+            default:
+                // If we got here, the user's action was not recognized.
+                // Invoke the superclass to handle it.
+                return super.onOptionsItemSelected(item);
+
+        }
+    }
 
 }
