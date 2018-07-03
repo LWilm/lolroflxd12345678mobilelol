@@ -7,9 +7,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -18,14 +20,22 @@ import java.util.List;
 
 public class SuchergebnisActivity extends AppCompatActivity {
 
+    protected static int suchergebnis;
+
     private ListView mainListView ;
     private ArrayAdapter<String> listAdapter ;
+
+    Button bildbutton;
+    TextView mulltext;
 
     /** Called when the activity is first created. */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_suchergebnis);
+
+
+
 
         // Get reference of widgets from XML layout
         final ListView lv = (ListView) findViewById(R.id.listview);
@@ -60,9 +70,9 @@ public class SuchergebnisActivity extends AppCompatActivity {
         };
 
         arrayAdapter.add("Wertstoffhof-Nord: 1.8km");
-        arrayAdapter.add("Wertstoffhof-Süd: 3km");
-        arrayAdapter.add("ATR Recycling GmbH: 3.1km");
-        arrayAdapter.add("Sperrmüll anmelden");
+        arrayAdapter.add("Wertstoffhof-Süd: 6km");
+        arrayAdapter.add("ATR Recycling GmbH: 15km");
+        arrayAdapter.add("Schrotthandel Ludwig GmbH: 23km");
 
         // DataBind ListView with items from ArrayAdapter
         lv.setAdapter(arrayAdapter);
@@ -70,7 +80,23 @@ public class SuchergebnisActivity extends AppCompatActivity {
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent2 = new Intent(SuchergebnisActivity.this, SuchergebnisActivity.class);
+
+                switch (i){
+                    case 0:
+                        suchergebnis = 0;
+                        break;
+                    case 1:
+                        suchergebnis = 1;
+                        break;
+                    case 2:
+                        suchergebnis = 2;
+                        break;
+                    case 3:
+                        suchergebnis = 3;
+                        break;
+
+                }
+                Intent intent2 = new Intent(SuchergebnisActivity.this, SuchergebnisDetails.class);
                 startActivity(intent2);
                 System.out.println(i);
             }
