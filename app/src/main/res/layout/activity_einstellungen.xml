@@ -18,8 +18,8 @@
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbarSettings"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
+            android:layout_height="?android:attr/actionBarSize"
+            android:background="?android:attr/colorPrimary"
             android:elevation="4dp"
             android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
@@ -40,6 +40,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
             android:layout_marginTop="23dp"
+            android:editable="false"
             android:ems="10"
             android:inputType="textMultiLine"
             android:lines="3"

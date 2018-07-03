@@ -21,7 +21,8 @@
         </activity>
         <activity android:name=".EinstellungenActivity" />
         <activity android:name=".SuchergebnisActivity" />
-        <activity android:name=".SuchergebnisDetails"></activity>
+        <activity android:name=".SuchergebnisDetails" />
+        <activity android:name=".KameraActivity"></activity>
     </application>
 
 </manifest>
