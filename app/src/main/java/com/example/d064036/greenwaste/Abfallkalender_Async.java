@@ -2,6 +2,7 @@ package com.example.d064036.greenwaste;
 
 
 import android.os.AsyncTask;
+import android.widget.Button;
 import android.widget.CheckBox;
 
 import org.json.JSONArray;
@@ -21,6 +22,15 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
 
+import static com.example.d064036.greenwaste.MainActivity.BtnTonne1;
+import static com.example.d064036.greenwaste.MainActivity.BtnTonne2;
+import static com.example.d064036.greenwaste.MainActivity.BtnTonne3;
+import static com.example.d064036.greenwaste.MainActivity.BtnTonne4;
+import static com.example.d064036.greenwaste.MainActivity.EdtEntleerung1;
+import static com.example.d064036.greenwaste.MainActivity.EdtEntleerung2;
+import static com.example.d064036.greenwaste.MainActivity.EdtEntleerung3;
+import static com.example.d064036.greenwaste.MainActivity.EdtEntleerung4;
+
 public class Abfallkalender_Async extends AsyncTask<String,Integer,String> {
 
     CheckBox change;
@@ -32,6 +42,7 @@ public class Abfallkalender_Async extends AsyncTask<String,Integer,String> {
     String lolhelp;
     ArrayList<Abfallkalender> AbfallkalenderList = new ArrayList<Abfallkalender>();
     Abfallkalender Abfallkalenderhelp;
+
 //    String help;
 
     public Abfallkalender_Async() {
@@ -44,6 +55,7 @@ public class Abfallkalender_Async extends AsyncTask<String,Integer,String> {
         System.out.println("alex hat nen kleinen penis");
 
         DateFormat format = new SimpleDateFormat("yyyy-M-d");
+        DateFormat format2 = new SimpleDateFormat("d.M.yyyy");
 //        Date date = format.parse(string);
 
         try {
@@ -68,38 +80,59 @@ public class Abfallkalender_Async extends AsyncTask<String,Integer,String> {
 
             Collections.sort(AbfallkalenderList);
 
-            int j = 1;
-            for(Abfallkalender a : AbfallkalenderList){
-
-
-
-                System.out.println("Datum:" + a.getDatum());
-                System.out.println("Tonne: " + a.getTonne());
-                j =+ 1 ;
-            }
-
-
-
-
-//            System.out.println(Arrays.deepToString(Abfallkalender));
-
-//            System.out.println(Abfallkalender[0][15]);
-
-//            System.out.println(Abfallkalender);
-            System.out.println(Arrays.deepToString(Abfallkalender));
-//            switch (output_string) {
-//                case "Tag":
-//                    EinstellungenActivity.RBbenachrichtigung.check(R.id.tag);
-//                    break;
-//                case "Woche":
-//                    EinstellungenActivity.RBbenachrichtigung.check(R.id.woche);
-//                    break;
-//                case "Keine":
-//                    EinstellungenActivity.RBbenachrichtigung.check(R.id.keine);
-//                    break;
-//                default:
-//                    EinstellungenActivity.RBbenachrichtigung.check(R.id.keine);
+//            for(Abfallkalender a : AbfallkalenderList){
+//                System.out.println("Datum:" + a.getDatum());
+//                System.out.println("Tonne: " + a.getTonne());
 //            }
+
+            int j = 1;
+            for(Abfallkalender f : AbfallkalenderList){
+                tonnehelp = f.getTonne();
+                datumhelp = f.getDatum();
+                String reportDate = format2.format(datumhelp);
+
+//                System.out.println(reportDate);
+                switch(j){
+                    case 1:
+                        EdtEntleerung1.setText(reportDate);
+                        switch (tonnehelp){
+                            case "1": BtnTonne1.setBackgroundResource(R.drawable.ic_blau); break;
+                            case "2": BtnTonne1.setBackgroundResource(R.drawable.ic_braun); break;
+                            case "3": BtnTonne1.setBackgroundResource(R.drawable.ic_schwarz); break;
+                            case "4": BtnTonne1.setBackgroundResource(R.drawable.ic_gelb); break;
+                        }
+                        break;
+                    case 2:
+                        EdtEntleerung2.setText(reportDate);
+                        switch (tonnehelp){
+                            case "1": BtnTonne2.setBackgroundResource(R.drawable.ic_blau); break;
+                            case "2": BtnTonne2.setBackgroundResource(R.drawable.ic_braun); break;
+                            case "3": BtnTonne2.setBackgroundResource(R.drawable.ic_schwarz); break;
+                            case "4": BtnTonne2.setBackgroundResource(R.drawable.ic_gelb); break;
+                        }
+                        break;
+                    case 3:
+                        EdtEntleerung3.setText(reportDate);
+                        switch (tonnehelp){
+                            case "1": BtnTonne3.setBackgroundResource(R.drawable.ic_blau); break;
+                            case "2": BtnTonne3.setBackgroundResource(R.drawable.ic_braun); break;
+                            case "3": BtnTonne3.setBackgroundResource(R.drawable.ic_schwarz); break;
+                            case "4": BtnTonne3.setBackgroundResource(R.drawable.ic_gelb); break;
+                        }
+                        break;
+                    case 4:
+                        EdtEntleerung4.setText(reportDate);
+                        switch (tonnehelp){
+                            case "1": BtnTonne4.setBackgroundResource(R.drawable.ic_blau); break;
+                            case "2": BtnTonne4.setBackgroundResource(R.drawable.ic_braun); break;
+                            case "3": BtnTonne4.setBackgroundResource(R.drawable.ic_schwarz); break;
+                            case "4": BtnTonne4.setBackgroundResource(R.drawable.ic_gelb); break;
+                        }
+                        break;
+                }
+
+                j = j + 1 ;
+            }
         } catch (JSONException e) {
             System.out.println("Nothing Found!");
             e.printStackTrace();
