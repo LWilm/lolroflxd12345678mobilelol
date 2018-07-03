@@ -71,7 +71,7 @@ public class Abfallkalender_Async extends AsyncTask<String,Integer,String> {
             int j = 1;
             for(Abfallkalender a : AbfallkalenderList){
 
-                
+
 
                 System.out.println("Datum:" + a.getDatum());
                 System.out.println("Tonne: " + a.getTonne());
