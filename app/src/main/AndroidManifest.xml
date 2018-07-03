@@ -20,7 +20,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".EinstellungenActivity" />
-        <activity android:name=".SuchergebnisActivity"></activity>
+        <activity android:name=".SuchergebnisActivity" />
+        <activity android:name=".SuchergebnisDetails"></activity>
     </application>
 
 </manifest>
