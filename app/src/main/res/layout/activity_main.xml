@@ -46,13 +46,24 @@
             android:id="@+id/button2"
             android:layout_width="319dp"
             android:layout_height="233dp"
-            android:layout_marginTop="88dp"
+            android:layout_marginTop="84dp"
             android:background="@drawable/button_border"
             android:gravity="top"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.507"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="140dp"
+            android:layout_marginTop="172dp"
+            android:text="Nächste Entleerungen:"
+            android:translationZ="100dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/toolbar" />
 
         <Button
             android:id="@+id/button3"
@@ -65,7 +76,7 @@
             app:layout_constraintTop_toBottomOf="@+id/button2" />
 
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/BtnFilter"
             android:layout_width="66dp"
             android:layout_height="48dp"
             android:layout_marginStart="40dp"
@@ -74,14 +85,89 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
+        <Button
+            android:id="@+id/BtnTonne2"
+            android:layout_width="37dp"
+            android:layout_height="39dp"
+            android:layout_marginStart="204dp"
+            android:layout_marginTop="224dp"
+            android:background="@drawable/ic_blau"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/toolbar" />
+
+        <Button
+            android:id="@+id/BtnTonne3"
+            android:layout_width="37dp"
+            android:layout_height="39dp"
+            android:layout_marginStart="68dp"
+            android:layout_marginTop="292dp"
+            android:background="@drawable/ic_gelb"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/toolbar" />
+
+        <Button
+            android:id="@+id/BtnTonne4"
+            android:layout_width="37dp"
+            android:layout_height="39dp"
+            android:layout_marginStart="204dp"
+            android:layout_marginTop="292dp"
+            android:background="@drawable/ic_braun"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/toolbar" />
+
+        <Button
+            android:id="@+id/BtnTonne1"
+            android:layout_width="37dp"
+            android:layout_height="39dp"
+            android:layout_marginStart="68dp"
+            android:layout_marginTop="224dp"
+            android:background="@drawable/ic_schwarz"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/toolbar" />
+
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/3Entleerung"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Nächste Entleerungen:"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="300dp"
+            android:text="12.07.18"
             android:translationZ="100dp"
-            tools:layout_editor_absoluteX="163dp"
-            tools:layout_editor_absoluteY="174dp" />
+            app:layout_constraintStart_toStartOf="@+id/button2"
+            app:layout_constraintTop_toTopOf="@+id/toolbar" />
+
+        <TextView
+            android:id="@+id/2Entleerung"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="216dp"
+            android:layout_marginTop="232dp"
+            android:text="08.07.18"
+            android:translationZ="100dp"
+            app:layout_constraintStart_toStartOf="@+id/button2"
+            app:layout_constraintTop_toTopOf="@+id/toolbar" />
+
+        <TextView
+            android:id="@+id/4Entleerung"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="216dp"
+            android:layout_marginTop="300dp"
+            android:text="20.07.18"
+            android:translationZ="100dp"
+            app:layout_constraintStart_toStartOf="@+id/button2"
+            app:layout_constraintTop_toTopOf="@+id/toolbar" />
+
+        <TextView
+            android:id="@+id/1Entleerung"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="232dp"
+            android:text="06.07.18"
+            android:translationZ="100dp"
+            app:layout_constraintStart_toStartOf="@+id/button2"
+            app:layout_constraintTop_toTopOf="@+id/toolbar" />
 
         <!--<android.support.v7.widget.Toolbar-->
             <!--android:id="@+id/toolbar"-->
