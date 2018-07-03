@@ -3,6 +3,8 @@ package com.example.d064036.greenwaste;
 
 import android.os.AsyncTask;
 import android.provider.Settings;
+import android.service.voice.VoiceInteractionService;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 import org.json.JSONArray;
@@ -15,14 +17,12 @@ import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class AsyncJson extends AsyncTask<String,Integer,String> {
+public class Benachrichtigung_Async extends AsyncTask<String,Integer,String> {
 
-    String output;
-    String searchfor;
+    CheckBox change;
+    String searchfor = "Benachrichtigungen";
 
-    public AsyncJson(String input, String return_string) {
-        output = return_string; //wo soll das Ergebnis ausgegeben werden?
-        searchfor = input; //Json Value nach dem gesucht wird
+    public Benachrichtigung_Async() {
     }
 
     @Override
@@ -34,11 +34,24 @@ public class AsyncJson extends AsyncTask<String,Integer,String> {
             JSONObject output_initial;
             for (int i = 0; i < result.length(); i++) {
                 output_initial = result.getJSONObject(i);
-                output_string = output_string + output_initial.get(searchfor) + "\n\n";
+                output_string = output_string + output_initial.get(searchfor);
             }
-            output = output_string; //Hier ist der Output
+            System.out.println(output_string);
+            switch (output_string) {
+                case "Tag":
+                    EinstellungenActivity.RBbenachrichtigung.check(R.id.tag);
+                    break;
+                case "Woche":
+                    EinstellungenActivity.RBbenachrichtigung.check(R.id.woche);
+                    break;
+                case "Keine":
+                    EinstellungenActivity.RBbenachrichtigung.check(R.id.keine);
+                    break;
+                default:
+                    EinstellungenActivity.RBbenachrichtigung.check(R.id.keine);
+            }
         } catch (JSONException e) {
-            output = "Nothing Found!";
+            System.out.println("Nothing Found!");
             e.printStackTrace();
         }
     }
@@ -65,4 +78,3 @@ public class AsyncJson extends AsyncTask<String,Integer,String> {
         return jsonString;
     }
 }
-

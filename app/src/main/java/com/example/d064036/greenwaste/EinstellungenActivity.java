@@ -18,6 +18,12 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
+
 public class EinstellungenActivity extends AppCompatActivity {
 
     android.support.v7.widget.Toolbar toolbarSettings;
@@ -25,11 +31,16 @@ public class EinstellungenActivity extends AppCompatActivity {
     EditText Gpslocation;
     protected static String location;
 
-    CheckBox CBblau;
-    CheckBox CBgrün;
-    CheckBox CBschwarz;
-    CheckBox CBgelb;
-    RadioGroup RBbenachrichtigung;
+    Benachrichtigung_Async BAJ;
+    Eigene_Tonnen_Async TAJ;
+    String table_einstellungen;
+    String table_tonnen;
+
+    public static CheckBox CBblau;
+    public static CheckBox CBgrün;
+    public static CheckBox CBschwarz;
+    public static CheckBox CBgelb;
+    public static RadioGroup RBbenachrichtigung;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +52,29 @@ public class EinstellungenActivity extends AppCompatActivity {
         CBschwarz = findViewById(R.id.schwarz);
         CBgelb = findViewById(R.id.gelb);
         RBbenachrichtigung = findViewById(R.id.benachrichtigung);
+
+        BAJ = new Benachrichtigung_Async();
+        table_einstellungen = "Einstellungen"; //Tabelle nach der gesucht werden soll
+        String url = null;
+
+        try {
+            url = "http://mobile.5bbiz.com/php/db.php?table=" + URLEncoder.encode(table_einstellungen, "UTF-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        BAJ.execute(url);
+
+
+        TAJ = new Eigene_Tonnen_Async();
+        table_tonnen = "Eigene_Tonnen"; //Tabelle nach der gesucht werden soll
+        String url2 = null;
+
+        try {
+            url2 = "http://mobile.5bbiz.com/php/db.php?table=" + URLEncoder.encode(table_tonnen, "UTF-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        TAJ.execute(url2);
 
         //Hier muss eine Abfrage der DB rein welche Benachrichtung und welche Mülltonnen der User hat.
 //        switch (Datenbankabfragergebnis) {
