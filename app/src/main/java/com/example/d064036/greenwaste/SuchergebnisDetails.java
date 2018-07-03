@@ -1,7 +1,10 @@
 package com.example.d064036.greenwaste;
 
+import android.content.Intent;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -9,13 +12,27 @@ import org.w3c.dom.Text;
 public class SuchergebnisDetails extends AppCompatActivity {
 
     TextView multiline;
+    android.support.v7.widget.Toolbar toolbarDetails;
+    ActionBar actionbarDetails;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_suchergebnis_details);
 
+        toolbarDetails = findViewById(R.id.toolbarSettings);
+        setSupportActionBar(toolbarDetails);
+
+        actionbarDetails = getSupportActionBar();
+        actionbarDetails.setDisplayHomeAsUpEnabled(true);
+        actionbarDetails.setHomeAsUpIndicator(R.drawable.ic_back);
+        actionbarDetails.setTitle("Details");
+
+
         multiline =  findViewById(R.id.editText);
+        multiline.setFocusable(false);
+        multiline.setClickable(false);
         String s = "";
 
         switch(SuchergebnisActivity.suchergebnis){
@@ -36,5 +53,23 @@ public class SuchergebnisDetails extends AppCompatActivity {
         multiline.setText(s);
 
         System.out.println(SuchergebnisActivity.suchergebnis);
+
+
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        System.out.println(item.getItemId());
+        switch (item.getItemId()) {
+            case 16908332:
+                Intent intent5 = new Intent(this, SuchergebnisActivity.class);
+                startActivity(intent5);
+                return true;
+
+            default:
+                // If we got here, the user's action was not recognized.
+                // Invoke the superclass to handle it.
+                return super.onOptionsItemSelected(item);
+
+        }
     }
 }

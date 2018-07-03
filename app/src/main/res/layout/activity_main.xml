@@ -58,9 +58,9 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="140dp"
+            android:layout_marginStart="132dp"
             android:layout_marginTop="172dp"
-            android:text="Nächste Entleerungen:"
+            android:text="Meine nächsten Entleerungen:"
             android:translationZ="100dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/toolbar" />
