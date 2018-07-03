@@ -58,80 +58,96 @@
             app:layout_constraintStart_toEndOf="@+id/editText2"
             app:layout_constraintTop_toBottomOf="@+id/toolbarSettings" />
 
+        <CheckBox
+            android:id="@+id/blau"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="176dp"
+            android:text="Papiermüll"
+            app:layout_constraintStart_toEndOf="@+id/textView5"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <CheckBox
+            android:id="@+id/grün"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="220dp"
+            android:text="Biomüll"
+            app:layout_constraintStart_toEndOf="@+id/textView5"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <CheckBox
+            android:id="@+id/gelb"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="304dp"
+            android:text="Grüner Punkt"
+            app:layout_constraintStart_toEndOf="@+id/textView5"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <CheckBox
+            android:id="@+id/schwarz"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="264dp"
+            android:text="Restmüll"
+            app:layout_constraintStart_toEndOf="@+id/textView5"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <TextView
             android:id="@+id/textView5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="27dp"
             android:text="Meine Mülltonnen:"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="179dp" />
-
-        <RadioButton
-            android:id="@+id/radioButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Papiermüll"
-            tools:layout_editor_absoluteX="153dp"
-            tools:layout_editor_absoluteY="222dp" />
-
-        <RadioButton
-            android:id="@+id/radioButton4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Grüner Punkt"
-            tools:layout_editor_absoluteX="153dp"
-            tools:layout_editor_absoluteY="309dp" />
-
-        <RadioButton
-            android:id="@+id/radioButton3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Restmüll"
-            tools:layout_editor_absoluteX="153dp"
-            tools:layout_editor_absoluteY="267dp" />
-
-        <RadioButton
-            android:id="@+id/radioButton2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Biomüll"
-            tools:layout_editor_absoluteX="153dp"
-            tools:layout_editor_absoluteY="179dp" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editText2" />
 
         <TextView
             android:id="@+id/textView6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="189dp"
             android:text="Benachrichtigungen:"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="387dp" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
         <RadioGroup
+            android:id="@+id/benachrichtigung"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:layout_editor_absoluteX="153dp"
-            tools:layout_editor_absoluteY="387dp" >
+            android:layout_marginStart="11dp"
+            android:layout_marginTop="51dp"
+            android:checkedButton="@+id/keine"
+            app:layout_constraintStart_toEndOf="@+id/textView6"
+            app:layout_constraintTop_toBottomOf="@+id/gelb">
 
             <RadioButton
-                android:id="@+id/radioButton7"
+                android:id="@+id/keine"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Kein" />
+                android:text="Keine" />
 
             <RadioButton
-                android:id="@+id/radioButton5"
+                android:id="@+id/woche"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Wöchentlich" />
 
             <RadioButton
-                android:id="@+id/radioButton6"
+                android:id="@+id/tag"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Einen Tag vor Abhoilung" />
+                android:text="Einen Tag vor Abholung" />
         </RadioGroup>/>
 
 

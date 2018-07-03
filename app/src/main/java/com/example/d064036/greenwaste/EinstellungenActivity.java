@@ -12,20 +12,90 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
 public class EinstellungenActivity extends AppCompatActivity {
 
     android.support.v7.widget.Toolbar toolbarSettings;
     ActionBar actionbarSettings;
-    String test;
     EditText Gpslocation;
     protected static String location;
+
+    CheckBox CBblau;
+    CheckBox CBgrün;
+    CheckBox CBschwarz;
+    CheckBox CBgelb;
+    RadioGroup RBbenachrichtigung;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_einstellungen);
+
+        CBblau = findViewById(R.id.blau);
+        CBgrün = findViewById(R.id.grün);
+        CBschwarz = findViewById(R.id.schwarz);
+        CBgelb = findViewById(R.id.gelb);
+        RBbenachrichtigung = findViewById(R.id.benachrichtigung);
+
+        //Hier muss eine Abfrage der DB rein welche Benachrichtung und welche Mülltonnen der User hat.
+//        switch (Datenbankabfragergebnis) {
+//            case "blau": RBblau.setChecked(true);
+//            case "grün": RBgrün.setChecked(true);
+//            case "schwarz": RBschwarz.setChecked(true);
+//            case "gelb": RBgelb.setChecked(true);
+//            case "tag": RBbenachrichtigung.check(R.id.tag);
+//            case "woche": RBbenachrichtigung.check(R.id.woche);
+//            case "keine": RBbenachrichtigung.check(R.id.keine);
+//            }
+
+        RBbenachrichtigung.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+        {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                // checkedId is the RadioButton selected
+                //CheckID in die DB hochladen
+            }
+        });
+
+
+        CBblau.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
+                System.out.println(CBblau.isChecked());
+                }
+            }
+        );
+
+        CBgelb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                                              @Override
+                                              public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
+                                                  System.out.println(CBgelb.isChecked());
+                                              }
+                                          }
+        );
+
+        CBgrün.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                                              @Override
+                                              public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
+                                                  System.out.println(CBgrün.isChecked());
+                                              }
+                                          }
+        );
+
+        CBschwarz.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                                              @Override
+                                              public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
+                                                  System.out.println(CBschwarz.isChecked());
+                                              }
+                                          }
+        );
+
+
 
         Gpslocation = findViewById(R.id.editText2);
 
@@ -33,7 +103,7 @@ public class EinstellungenActivity extends AppCompatActivity {
         {
             Gpslocation.setText(location);
         } else {
-            Gpslocation.setText("Bitte legen Sie mit Hilfe des Buttons Ihre Adresse fest.");
+            Gpslocation.setText("Bitte legen Sie durch Klick auf den Button Ihre Adresse fest.");
         }
 
         toolbarSettings = findViewById(R.id.toolbarSettings);
