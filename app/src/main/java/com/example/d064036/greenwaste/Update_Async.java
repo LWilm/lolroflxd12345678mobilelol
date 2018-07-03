@@ -22,6 +22,7 @@ public class Update_Async extends AsyncTask<String,Integer,String> {
     String urlstring;
 
     public Update_Async() {
+        //Komentatnasfsafd
     }
 
     // Hier nix ändern
