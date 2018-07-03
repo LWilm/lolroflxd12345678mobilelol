@@ -35,6 +35,7 @@ public class Benachrichtigung_Async extends AsyncTask<String,Integer,String> {
             for (int i = 0; i < result.length(); i++) {
                 output_initial = result.getJSONObject(i);
                 output_string = output_string + output_initial.get(searchfor);
+
             }
             System.out.println(output_string);
             switch (output_string) {

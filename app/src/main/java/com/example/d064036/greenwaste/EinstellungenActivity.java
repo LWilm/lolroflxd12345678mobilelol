@@ -33,8 +33,15 @@ public class EinstellungenActivity extends AppCompatActivity {
 
     Benachrichtigung_Async BAJ;
     Eigene_Tonnen_Async TAJ;
+
     String table_einstellungen;
     String table_tonnen;
+
+    Update_Async UpdateRadio;
+    Update_Async UpdateBlau;
+    Update_Async UpdateGruen;
+    Update_Async UpdateSchwarz;
+    Update_Async UpdateGelb;
 
     public static CheckBox CBblau;
     public static CheckBox CBgrün;
@@ -91,8 +98,23 @@ public class EinstellungenActivity extends AppCompatActivity {
         {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                // checkedId is the RadioButton selected
-                //CheckID in die DB hochladen
+                UpdateRadio = new Update_Async();
+                String url = null;
+                String wert = null;
+
+                if(checkedId == 2131230826){
+                    url = "http://mobile.5bbiz.com/php/update.php?table=Einstellungen&column=Benachrichtigungen&value=Keine&where1=User&where2=1";
+                    wert = "Keine";
+                } else if (checkedId == 2131230934) {
+                    url = "http://mobile.5bbiz.com/php/update.php?table=Einstellungen&column=Benachrichtigungen&value=Woche&where1=User&where2=1";
+                    wert = "Woche";
+                } else {
+                    url = "http://mobile.5bbiz.com/php/update.php?table=Einstellungen&column=Benachrichtigungen&value=Tag&where1=User&where2=1";
+                    wert = "Tag";
+                }
+                UpdateRadio.execute(url);
+                System.out.println(wert);
+
             }
         });
 
@@ -100,7 +122,16 @@ public class EinstellungenActivity extends AppCompatActivity {
         CBblau.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
-                System.out.println(CBblau.isChecked());
+                    UpdateBlau = new Update_Async();
+                    String url = null;
+
+                    if(CBblau.isChecked() == true){
+                        url = "http://mobile.5bbiz.com/php/update.php?table=Eigene_Tonnen&column=Besitz&value=1&where1=Tonne&where2=1";
+                    } else {
+                        url = "http://mobile.5bbiz.com/php/update.php?table=Eigene_Tonnen&column=Besitz&value=0&where1=Tonne&where2=1";
+                    }
+                    UpdateBlau.execute(url);
+                    System.out.println(CBblau.isChecked());
                 }
             }
         );
@@ -108,25 +139,52 @@ public class EinstellungenActivity extends AppCompatActivity {
         CBgelb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                                               @Override
                                               public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
-                                                  System.out.println(CBgelb.isChecked());
-                                              }
-                                          }
+                  UpdateGelb = new Update_Async();
+                  String url = null;
+
+                  if(CBgelb.isChecked() == true){
+                      url = "http://mobile.5bbiz.com/php/update.php?table=Eigene_Tonnen&column=Besitz&value=1&where1=Tonne&where2=4";
+                  } else {
+                      url = "http://mobile.5bbiz.com/php/update.php?table=Eigene_Tonnen&column=Besitz&value=0&where1=Tonne&where2=4";
+                  }
+                  UpdateGelb.execute(url);
+                  System.out.println(CBgelb.isChecked());
+              }
+            }
         );
 
         CBgrün.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                                               @Override
                                               public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
-                                                  System.out.println(CBgrün.isChecked());
-                                              }
-                                          }
+              UpdateGruen = new Update_Async();
+              String url = null;
+
+              if(CBgrün.isChecked() == true){
+                  url = "http://mobile.5bbiz.com/php/update.php?table=Eigene_Tonnen&column=Besitz&value=1&where1=Tonne&where2=2";
+              } else {
+                  url = "http://mobile.5bbiz.com/php/update.php?table=Eigene_Tonnen&column=Besitz&value=0&where1=Tonne&where2=2";
+              }
+                UpdateGruen.execute(url);
+                System.out.println(CBgrün.isChecked());
+            }
+            }
         );
 
         CBschwarz.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                                               @Override
                                               public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
-                                                  System.out.println(CBschwarz.isChecked());
-                                              }
-                                          }
+              UpdateSchwarz = new Update_Async();
+              String url = null;
+
+              if(CBschwarz.isChecked() == true){
+                  url = "http://mobile.5bbiz.com/php/update.php?table=Eigene_Tonnen&column=Besitz&value=1&where1=Tonne&where2=3";
+              } else {
+                  url = "http://mobile.5bbiz.com/php/update.php?table=Eigene_Tonnen&column=Besitz&value=0&where1=Tonne&where2=3";
+              }
+                UpdateSchwarz.execute(url);
+                System.out.println(CBschwarz.isChecked());
+            }
+            }
         );
 
 
