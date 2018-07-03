@@ -46,13 +46,24 @@
             android:id="@+id/button2"
             android:layout_width="319dp"
             android:layout_height="233dp"
-            android:layout_marginTop="88dp"
+            android:layout_marginTop="84dp"
             android:background="@drawable/button_border"
             android:gravity="top"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.507"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="140dp"
+            android:layout_marginTop="172dp"
+            android:text="Nächste Entleerungen:"
+            android:translationZ="100dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/toolbar" />
 
         <Button
             android:id="@+id/button3"
@@ -73,15 +84,6 @@
             android:background="@drawable/ic_arrow_down"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/toolbar" />
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Nächste Entleerungen:"
-            android:translationZ="100dp"
-            tools:layout_editor_absoluteX="163dp"
-            tools:layout_editor_absoluteY="174dp" />
 
         <!--<android.support.v7.widget.Toolbar-->
             <!--android:id="@+id/toolbar"-->
