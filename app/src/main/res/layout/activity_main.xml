@@ -72,6 +72,7 @@
             android:layout_marginStart="134dp"
             android:layout_marginTop="63dp"
             android:background="@android:drawable/ic_menu_camera"
+            android:onClick="camera"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/button2" />
 
