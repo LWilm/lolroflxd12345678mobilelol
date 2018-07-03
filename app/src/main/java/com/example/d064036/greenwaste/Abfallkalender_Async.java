@@ -26,6 +26,8 @@ import static com.example.d064036.greenwaste.MainActivity.BtnTonne1;
 import static com.example.d064036.greenwaste.MainActivity.BtnTonne2;
 import static com.example.d064036.greenwaste.MainActivity.BtnTonne3;
 import static com.example.d064036.greenwaste.MainActivity.BtnTonne4;
+import static com.example.d064036.greenwaste.MainActivity.CBBlau;
+import static com.example.d064036.greenwaste.MainActivity.CBGruen;
 import static com.example.d064036.greenwaste.MainActivity.EdtEntleerung1;
 import static com.example.d064036.greenwaste.MainActivity.EdtEntleerung2;
 import static com.example.d064036.greenwaste.MainActivity.EdtEntleerung3;
@@ -40,7 +42,10 @@ public class Abfallkalender_Async extends AsyncTask<String,Integer,String> {
     String tonnehelp;
     Date datumhelp;
     String lolhelp;
-    ArrayList<Abfallkalender> AbfallkalenderList = new ArrayList<Abfallkalender>();
+    //int[] toDelete = new int[25];
+        ArrayList<Abfallkalender> AbfallkalenderList = new ArrayList<Abfallkalender>();
+        ArrayList<Abfallkalender> AbfallkalenderList2 = new ArrayList<Abfallkalender>();
+
     Abfallkalender Abfallkalenderhelp;
 
 //    String help;
@@ -78,15 +83,50 @@ public class Abfallkalender_Async extends AsyncTask<String,Integer,String> {
                 AbfallkalenderList.add(Abfallkalenderhelp);
             }
 
-            Collections.sort(AbfallkalenderList);
+
 
 //            for(Abfallkalender a : AbfallkalenderList){
 //                System.out.println("Datum:" + a.getDatum());
 //                System.out.println("Tonne: " + a.getTonne());
 //            }
+            System.out.println(MainActivity.CBBlau.isChecked());
+
+//            int jj = 0;
+//            if (MainActivity.CBBlau.isChecked() == false) {
+//                for(Abfallkalender b : AbfallkalenderList){
+//                    if (b.getTonne().equals("1")){
+//                        toDelete[jj] = AbfallkalenderList.indexOf(b);
+//                        System.out.println("deltion");
+//                        jj = jj+ 1;
+//                    }
+//                }
+//            }
+
+
+            for(Abfallkalender t : AbfallkalenderList){
+                System.out.println("Tonne: " + t.getTonne());
+                if (MainActivity.CBBlau.isChecked() == true && t.getTonne().equals("1")){
+                    AbfallkalenderList2.add(t);
+                    System.out.println("hallo wtf" + t.getTonne());
+                } else if (MainActivity.CBGruen.isChecked() == true && t.getTonne().equals("2")){
+                    AbfallkalenderList2.add(t);
+                }else if (MainActivity.CBSchwarz.isChecked() == true && t.getTonne().equals("3")) {
+                    AbfallkalenderList2.add(t);
+                } else if (MainActivity.CBGelb.isChecked() == true && t.getTonne().equals("4")) {
+                    AbfallkalenderList2.add(t);
+                }
+            }
+
+            Collections.sort(AbfallkalenderList2);
+
+            for(Abfallkalender a : AbfallkalenderList2){
+                System.out.println("Datum:" + a.getDatum());
+                System.out.println("Tonne: " + a.getTonne());
+            }
+
 
             int j = 1;
-            for(Abfallkalender f : AbfallkalenderList){
+            for(Abfallkalender f : AbfallkalenderList2){
                 tonnehelp = f.getTonne();
                 datumhelp = f.getDatum();
                 String reportDate = format2.format(datumhelp);
