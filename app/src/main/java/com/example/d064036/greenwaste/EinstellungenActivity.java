@@ -102,16 +102,18 @@ public class EinstellungenActivity extends AppCompatActivity {
                 String url = null;
                 String wert = null;
 
-                if(checkedId == 2131230826){
+                if(checkedId == 2131230826 || checkedId == 2131230836 ){
                     url = "http://mobile.5bbiz.com/php/update.php?table=Einstellungen&column=Benachrichtigungen&value=Keine&where1=User&where2=1";
                     wert = "Keine";
-                } else if (checkedId == 2131230934) {
+                } else if (checkedId == 2131230934 || checkedId == 2131230950) {
                     url = "http://mobile.5bbiz.com/php/update.php?table=Einstellungen&column=Benachrichtigungen&value=Woche&where1=User&where2=1";
                     wert = "Woche";
                 } else {
                     url = "http://mobile.5bbiz.com/php/update.php?table=Einstellungen&column=Benachrichtigungen&value=Tag&where1=User&where2=1";
                     wert = "Tag";
                 }
+                System.out.println("HIER DU HURE");
+                System.out.println(checkedId);
                 UpdateRadio.execute(url);
                 System.out.println(wert);
 
@@ -190,6 +192,8 @@ public class EinstellungenActivity extends AppCompatActivity {
 
 
         Gpslocation = findViewById(R.id.editText2);
+        Gpslocation.setFocusable(false);
+        Gpslocation.setClickable(false);
 
         if (location != null && location != "**here I want to check the 'str' is empty or not**")
         {
