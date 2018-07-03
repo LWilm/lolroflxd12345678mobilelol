@@ -17,6 +17,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import static com.example.d064036.greenwaste.KameraActivity.HolzMetall;
+
 
 public class SuchergebnisActivity extends AppCompatActivity {
 
@@ -34,8 +36,13 @@ public class SuchergebnisActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_suchergebnis);
 
+        bildbutton = findViewById(R.id.button4);
+        mulltext = findViewById(R.id.textView8);
 
-
+        if(HolzMetall == "Holz"){
+            bildbutton.setVisibility(View.VISIBLE);
+            mulltext.setVisibility(View.VISIBLE);
+        }
 
         // Get reference of widgets from XML layout
         final ListView lv = (ListView) findViewById(R.id.listview);
