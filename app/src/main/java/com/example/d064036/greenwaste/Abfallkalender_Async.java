@@ -91,7 +91,7 @@ public class Abfallkalender_Async extends AsyncTask<String,Integer,String> {
                 datumhelp = f.getDatum();
                 String reportDate = format2.format(datumhelp);
 
-                System.out.println(reportDate);
+//                System.out.println(reportDate);
                 switch(j){
                     case 1:
                         EdtEntleerung1.setText(reportDate);
