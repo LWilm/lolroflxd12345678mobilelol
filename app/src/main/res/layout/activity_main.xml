@@ -18,8 +18,8 @@
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
+            android:layout_height="?android:attr/actionBarSize"
+            android:background="?android:attr/colorPrimary"
             android:elevation="4dp"
             android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
@@ -126,7 +126,7 @@
             app:layout_constraintTop_toTopOf="@+id/toolbar" />
 
         <TextView
-            android:id="@+id/3Entleerung"
+            android:id="@+id/Entleerung3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="80dp"
@@ -137,7 +137,7 @@
             app:layout_constraintTop_toTopOf="@+id/toolbar" />
 
         <TextView
-            android:id="@+id/2Entleerung"
+            android:id="@+id/Entleerung2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="216dp"
@@ -148,7 +148,7 @@
             app:layout_constraintTop_toTopOf="@+id/toolbar" />
 
         <TextView
-            android:id="@+id/4Entleerung"
+            android:id="@+id/Entleerung4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="216dp"
@@ -159,7 +159,7 @@
             app:layout_constraintTop_toTopOf="@+id/toolbar" />
 
         <TextView
-            android:id="@+id/1Entleerung"
+            android:id="@+id/Entleerung1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="80dp"
